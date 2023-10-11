@@ -2,10 +2,38 @@
 //
 
 #include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
 
+vector<char> cypher = { 'V','F','X','B','L','I','T','Z','J','R','P','H','D','K','N','O','W','S','G','U','Y','Q','M','A','C','E' };
+char translate(char letter){
+    if (letter >= 65 && letter <= 90) {
+        return cypher[letter - 65];
+    }
+
+    else if (letter >= 97 && letter <= 122) {
+        char upperCaseLetter = letter - 32;
+        char upperCaseCode = cypher [upperCaseLetter - 65];
+        return upperCaseCode + 32;
+    }
+    else {
+        return letter;
+    }
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+ string text;
+    cout << "input text to cypher: ";
+    getline(cin, text); // did I do this correctly?
+    
+    for (char& letter : text)
+    {
+        letter = translate(letter);
+     }
+    cout << "Encoded Message: \"" << text << "...\" " << endl;
+
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
