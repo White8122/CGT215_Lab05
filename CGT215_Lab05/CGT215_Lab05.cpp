@@ -31,7 +31,7 @@ int main()
     {
         letter = translate(letter);
      }
-    cout << "Encoded Message: \"" << text << "...\" " << endl;
+    cout << "Encoded Message: \"" << text << "...\" " << endl;// added the quotations, not sure if this is is correct in C++ but it works,
 
     return 0;
 }
